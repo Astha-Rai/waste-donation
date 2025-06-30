@@ -1,3 +1,4 @@
+/* Reset and base font */
 * {
   margin: 0;
   padding: 0;
@@ -5,12 +6,14 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
+/* Body */
 body {
   background: #f9fefb;
   color: #1e3a34;
   line-height: 1.6;
 }
 
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -22,6 +25,7 @@ body {
 .navbar .logo {
   font-size: 1.4rem;
   font-weight: bold;
+  color: #1e3a34;
 }
 
 .navbar nav a {
@@ -29,8 +33,17 @@ body {
   text-decoration: none;
   color: #1e3a34;
   font-weight: 500;
+  background: #c8f2e0;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: background 0.3s ease;
 }
 
+.navbar nav a:hover {
+  background: #a9e9d1;
+}
+
+/* Hero Section */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -48,28 +61,40 @@ body {
 .hero-text h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: #145c46;
 }
 
 .hero-text p {
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
+  color: #33695f;
 }
 
+/* CTA Button */
 .cta-btn {
   background: #1f7f5c;
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
   text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
+.cta-btn:hover {
+  background: #16684c;
+  transform: scale(1.05);
+}
+
+/* Hero Image */
 .hero-img img {
-  width: 450px;  /* or try 500px */
+  width: 450px;
   max-width: 100%;
+  height: auto;
   margin-top: 2rem;
 }
 
-
+/* Info Cards */
 .info-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -83,6 +108,11 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   padding: 2rem;
   text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card img {
@@ -92,4 +122,32 @@ body {
 
 .card h3 {
   margin-bottom: 0.5rem;
+  color: #1e3a34;
+}
+
+.card p {
+  color: #456963;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-img img {
+    margin-top: 1rem;
+    width: 90%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar nav a {
+    margin: 0.3rem 0;
+    display: inline-block;
+  }
 }
