@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard - Kindway{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="container text-center">
+    <h1>🛡️ Admin Dashboard</h1>
+    <p class="lead">Overview of users, NGOs, and donations in the Kindway ecosystem.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title mb-4">🗂️ Registered Users</h2>
+    <div class="table-responsive">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Total Donations</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users %}
+          <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+            <td>{{ user[2] }}</td>
+            <td>{{ user[3] }}</td>
+          </tr>
+          {% else %}
+          <tr><td colspan="4">No registered users found.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-light">
+  <div class="container">
+    <h2 class="section-title mb-4">📑 Registered NGOs</h2>
+    <div class="table-responsive">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>NGO ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Location</th>
+            <th>Contact</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for ngo in ngos %}
+          <tr>
+            <td>{{ ngo[0] }}</td>
+            <td>{{ ngo[1] }}</td>
+            <td>{{ ngo[2] }}</td>
+            <td>{{ ngo[3] }}</td>
+            <td>{{ ngo[4] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title mb-4">🧁 Donations per NGO</h2>
+    <div class="table-responsive">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>NGO Name</th>
+            <th>Donation Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in donations_per_ngo %}
+          <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+          </tr>
+          {% else %}
+          <tr><td colspan="2">No donation data found.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{% endblock %}

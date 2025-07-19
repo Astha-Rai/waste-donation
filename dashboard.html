@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fef9;
+      margin: 0;
+      padding: 0;
+    } 
+    .dashboard-container {
+      max-width: 800px;
+      margin: 50px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .dashboard-container h1 {
+      text-align: center;
+      color: #2e7d32;
+    }
+    .dashboard-container p {
+      text-align: center;
+      color: #555;
+    }
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+    }
+    .stat-box {
+      background: #e0f2f1;
+      padding: 20px;
+      border-radius: 8px;
+      width: 150px;
+      text-align: center;
+    }
+    .stat-box h2 {
+      margin: 0;
+      color: #2e7d32;
+    }
+    .stat-box p {
+      margin: 5px 0 0 0;
+      color: #333;
+    }
+    .recent-activity {
+      margin-top: 40px;
+    }
+    .recent-activity h3 {
+      color: #2e7d32;
+    }
+    .recent-activity ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .recent-activity li {
+      background: #f1f8e9;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1>Welcome to Your Dashboard</h1>
+    <p>Track your donation stats and recent activities</p>
+
+    <div class="stats">
+      <div class="stat-box">
+        <h2>5</h2>
+        <p>Total Donations</p>
+      </div>
+      <div class="stat-box">
+        <h2>20</h2>
+        <p>Items Donated</p>
+      </div>
+      <div class="stat-box">
+        <h2>3</h2>
+        <p>NGOs Supported</p>
+      </div>
+    </div>
+
+    <div class="recent-activity">
+      <h3>Recent Donations</h3>
+      <ul>
+        <li>✅ Clothes donated to Green Earth NGO (2 days ago)</li>
+        <li>✅ Books donated to Hope Foundation (1 week ago)</li>
+        <li>✅ Food items donated to Care & Share (2 weeks ago)</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!-- search_results.html
+{% extends 'base.html' %}
+{% block content %}
+<h2>Matching NGOs</h2>
+<ul>
+    {% for ngo in ngos %}
+    <li>
+        <h3>{{ ngo[1] }}</h3>
+        <p>Location: {{ ngo[6] }}</p>
+        <p>Categories: {{ ngo[7] }}</p>
+        <a href="/donate_info/{{ ngo[0] }}">Donate</a> |
+        <a href="/pickup_form/{{ ngo[0] }}">Request Pickup</a>
+    </li>
+    {% else %}
+    <p>No NGOs found for this category and location.</p>
+    {% endfor %}
+</ul>
+{% endblock %} -->
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center mb-4">Matching NGOs</h2>
+
+    {% if ngos %}
+    <div class="row g-4">
+        {% for ngo in ngos %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm ngo-card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ ngo[1] }}</h5>
+                    <p class="card-text"><strong>Location:</strong> {{ ngo[6] }}</p>
+                    <p class="card-text"><strong>Categories:</strong> {{ ngo[7] }}</p>
+                </div>
+                <div class="card-footer bg-transparent border-0 d-flex justify-content-between">
+                    <a href="/donate_info/{{ ngo[0] }}" class="btn btn-outline-success btn-sm">Donate</a>
+                    <a href="/pickup_form/{{ ngo[0] }}" class="btn btn-outline-primary btn-sm">Request Pickup</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="text-center text-muted mt-5">
+        <p>No NGOs found for this category and location.</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

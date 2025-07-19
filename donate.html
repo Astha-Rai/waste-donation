@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Donate Item</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8fff5;
+            padding: 30px;
+        }
+        h1 {
+            color: #2d6a4f; 
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+        }
+        label {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, select, button {
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #2d6a4f;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1b4332;
+        }
+    </style>
+</head>
+<body>
+    <h1>Submit a Donation</h1>
+    <form>
+        <label for="itemName">Item Name</label>
+        <input type="text" id="itemName" placeholder="e.g., Jacket">
+
+        <label for="category">Category</label>
+        <select id="category">
+            <option value="clothes">Clothes</option>
+            <option value="books">Books</option>
+            <option value="toys">Toys</option>
+            <option value="electronics">Electronics</option>
+        </select>
+
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" placeholder="e.g., 5">
+
+        <label for="condition">Condition</label>
+        <input type="text" id="condition" placeholder="e.g., Gently used">
+
+        <label for="ngo">Preferred NGO</label>
+        <input type="text" id="ngo" placeholder="e.g., Helping Hands">
+
+        <button type="submit">Submit Donation</button>
+    </form>
+</body>
+</html>

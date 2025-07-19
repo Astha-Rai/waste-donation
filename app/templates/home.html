@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero py-5 bg-success text-white">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Text Content -->
+      <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
+        <h1 class="display-5 fw-bold">Donate with Purpose, Act for the Planet</h1>
+        <p class="lead">Join Kindway to support a sustainable, waste-free India.</p>
+        <a href="#categories" class="btn btn-outline-light btn-lg mt-3">Explore Now</a>
+      </div>
+
+      <!-- Hero Image -->
+      <div class="col-md-6 text-center">
+        <div class="hero-img">
+          <img src="{{ url_for('static', filename='img/earth-donation.png') }}" alt="Earth donation" />
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Categories Section -->
+<section id="categories" class="py-5">
+  <div class="container">
+    <h2 class="text-center text-success mb-4">What Can You Donate? ♻️</h2>
+    <div class="row g-4">
+      {% for category, icon in [
+        ('Food', 'https://img.icons8.com/ios-filled/50/000000/meal.png'),
+        ('Clothes', 'https://img.icons8.com/ios-filled/50/000000/t-shirt.png'),
+        ('Books', 'https://img.icons8.com/ios-filled/50/000000/books.png'),
+        ('E-waste', 'https://img.icons8.com/ios-filled/50/000000/electronics.png'),
+        ('Saplings', 'https://img.icons8.com/ios-filled/50/000000/plant-under-sun.png')
+      ] %}
+      <div class="col-md-4">
+        <div class="card category-card shadow-sm text-center p-3">
+          <img src="{{ icon }}" alt="{{ category }}" class="category-icon mb-3">
+          <h5 class="card-title">{{ category }}</h5>
+          <a href="/donate/{{ category.lower() }}" class="btn btn-success mt-2">Donate {{ category }}</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Vision & Mission -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center text-success mb-4">Our Vision & Mission</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mission-box">
+          <h5><img src="https://img.icons8.com/ios-filled/30/000000/globe.png" class="me-2">Vision</h5>
+          <p>To empower citizens to donate wisely and bridge the gap between donors and NGOs for a sustainable India.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mission-box">
+          <h5><img src="https://img.icons8.com/ios-filled/30/000000/leaf.png" class="me-2">Mission</h5>
+          <p>To reduce environmental impact by connecting people with NGOs and facilitating reuse and recycling efforts through Kindway.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center text-success mb-4">Voices of Impact 💬</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card shadow-sm p-3 bg-white rounded">
+          <p>"Kindway helped me find a nearby NGO for my book donations. It’s now my go-to place!"</p>
+          <strong>- Aarti, Pune</strong>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm p-3 bg-white rounded">
+          <p>"I never thought recycling e-waste could be so easy. Pickup was super convenient!"</p>
+          <strong>- Rohit, Bangalore</strong>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm p-3 bg-white rounded">
+          <p>"A beautiful initiative to create a cleaner earth. Proud to be part of it."</p>
+          <strong>- Sneha, Mumbai</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

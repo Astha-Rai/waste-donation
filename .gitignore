@@ -1,0 +1,36 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Environment
+.env
+venv/
+.env.*
+
+# IDE/Editor files
+.vscode/
+*.swp
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and database
+*.log
+*.sqlite3
+
+# Flask-related
+instance/
+*.db
+*.bak
+
+# Python packages
+*.egg-info/
+dist/
+build/
+
+# Uploaded/static/media
+/static/images/uploads/

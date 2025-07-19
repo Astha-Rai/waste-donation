@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Kindway</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="/">🌿 Kindway</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/categories">Categories</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/contact">Contact</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Login / Register</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/login">Login</a></li>
+            <li><a class="dropdown-item" href="/register">Register as User</a></li>
+            <li><a class="dropdown-item" href="/register_ngo">Register as NGO</a></li>
+            <li><a class="dropdown-item" href="/register_admin">Register as Admin</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Contact Section -->
+<div class="container my-5">
+  <h2 class="text-center contact-title mb-5">📬 Get in Touch with Kindway</h2>
+  <div class="row align-items-center g-5">
+    <div class="col-lg-6">
+      <div class="contact-container">
+        <form method="POST" action="/contact">
+          <div class="mb-3">
+            <label class="form-label">Your Name 🌿</label>
+            <input type="text" name="name" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Your Email 📧</label>
+            <input type="email" name="email" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Message 💬</label>
+            <textarea name="message" class="form-control" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-success w-100">Send Message 🌱</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="info-box">
+        <h5><span class="emoji-icon">📞</span>Call Us</h5>
+        <p>+91 98765 43210</p>
+        <h5><span class="emoji-icon">📧</span>Email Us</h5>
+        <p>support@kindway.org</p>
+        <h5><span class="emoji-icon">📍</span>Address</h5>
+        <p>Pune, Maharashtra, India</p>
+        <h5><span class="emoji-icon">🕒</span>Hours</h5>
+        <p>Mon–Sat: 9AM – 6PM</p>
+        <img src="/static/images/contact-kindway.png" class="contact-img mt-3" alt="Contact Kindway" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="py-3 text-center">
+  <p class="mb-0">© 2025 Kindway | Empowering Sustainable Giving 🌎</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

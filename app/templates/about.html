@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block title %}Your Page Title Here{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Kindway</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-success" href="/">🌿 Kindway</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/categories">Categories</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>🌱 About Kindway</h1>
+        <p class="lead mt-3">Creating a cleaner, greener and kinder world through thoughtful donations.</p>
+    </div>
+</section>
+
+<!-- Vision & Mission -->
+<section class="section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="green-box">
+                    <h4 class="mb-3">🌍 Our Vision</h4>
+                    <p>To create a sustainable India by bridging citizens with NGOs that need their support — reducing waste, nurturing nature, and building a responsible donation culture.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="green-box">
+                    <h4 class="mb-3">🌿 Our Mission</h4>
+                    <p>We empower people to donate reusable resources, support communities, and minimize environmental harm through tech-enabled pickups, eco-routing, and collaboration with verified NGOs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Kindway -->
+<section class="section bg-light">
+    <div class="container">
+        <h2 class="section-title">💡 Why Choose Kindway?</h2>
+        <div class="row text-center g-4">
+            <div class="col-md-4">
+                <div class="green-box">
+                    <div class="sustain-icons">♻️</div>
+                    <h5>Zero Waste Goal</h5>
+                    <p>Encourages reuse, recycling, and responsible upcycling to reduce landfill burden.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="green-box">
+                    <div class="sustain-icons">📦</div>
+                    <h5>Smart Pickup Network</h5>
+                    <p>Easy pickup scheduling for e-waste, clothes, books, and more — from your doorstep.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="green-box">
+                    <div class="sustain-icons">🤝</div>
+                    <h5>Trusted NGO Partners</h5>
+                    <p>Verified NGOs across India for safe, transparent and impactful donations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section text-center">
+    <div class="container">
+        <h2 class="text-success mb-4">Ready to Make a Difference?</h2>
+        <p class="lead mb-4">Join thousands of changemakers contributing to a cleaner earth. Every item you donate plants a seed of hope. 🌾</p>
+        <a href="/categories" class="btn btn-lg btn-success">Donate Now</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<div class="footer">
+    <p class="mb-0">© 2025 Kindway — A path to conscious giving. 🌳</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{% endblock %}

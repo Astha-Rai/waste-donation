@@ -1,0 +1,27 @@
+<!-- donate_info.html -->
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm rounded-4 border-0" style="background: #fdfcfb;">
+        <div class="card-body p-5">
+          <h2 class="card-title text-center mb-4" style="color: #457b9d;">Donate to <strong>{{ ngo_name }}</strong></h2>
+          <ul class="list-unstyled fs-5">
+            <li><span class="fw-bold">📍 Address:</span> {{ ngo_address }}</li>
+            <li><span class="fw-bold">📞 Phone:</span> {{ ngo_phone }}</li>
+            <li><span class="fw-bold">🕒 Timings:</span> Drop off your items during working hours.</li>
+          </ul>
+          <div class="text-center mt-4">
+            <a href="/" class="btn btn-outline-success px-4 py-2 rounded-pill">← Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+

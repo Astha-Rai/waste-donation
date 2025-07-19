@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Login - Kindway{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="login-card">
+        <h2 class="text-center mb-3">🌱 Welcome to <strong>Kindway</strong></h2>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert alert-warning text-center">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <div class="form-group mb-3">
+                <label>Email Address</label>
+                <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group mb-4">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-green w-100">Login</button>
+        </form>
+
+        <div class="text-center mt-3 small-text">
+            Don’t have an account? <a href="{{ url_for('register') }}">Register</a><br>
+            Are you an NGO? <a href="{{ url_for('register_ngo') }}">Register as NGO</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+<!-- ngo_dashboard.html 
+{% extends 'base.html' %}
+{% block content %}
+<h2>NGO Dashboard</h2>
+<p>Welcome, {{ ngo_name }}!</p>
+<h3>Incoming Pickup Requests</h3>
+<ul>
+    {% for req in pickup_requests %}
+    <li>
+        Donation ID: {{ req[1] }} | Date: {{ req[3] }} | Status: {{ req[4] }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+-->
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <div class="text-center mb-4">
+        <h2 class="fw-bold text-success">🏢 NGO Dashboard</h2>
+        <p class="lead">Welcome, <strong>{{ ngo_name }}</strong>!</p>
+    </div>
+
+    <div class="card shadow-sm rounded-4 p-4">
+        <h4 class="mb-3 text-secondary">📦 Incoming Pickup Requests</h4>
+        {% if pickup_requests %}
+        <ul class="list-group">
+            {% for req in pickup_requests %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <strong>Donation ID:</strong> {{ req[1] }}<br>
+                    <small>Date: {{ req[3] }} | Status: <span class="badge bg-info text-dark">{{ req[4] }}</span></small>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p class="text-muted">No pickup requests at the moment.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
